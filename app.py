@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Load the pickled model
-pickle_in = open("set2.pkl","rb")
+pickle_in = open("SHRUTIJAINPIET18CS132.pkl","rb")
 model=pickle.load(pickle_in)
 dataset= pd.read_csv('dataset.csv')
 X = dataset.iloc[:,1:10].values
@@ -34,9 +34,9 @@ X[:, 2:3]= imputer.transform(X[:, 2:3])
 from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(missing_values= np.NAN, strategy= 'mean', fill_value=None, verbose=1, copy=True)
 #Fitting imputer object to the independent variables x.   
-imputer = imputer.fit(X[:, 3:6])
+imputer = imputer.fit(X[:, 3:9])
 #Replacing missing data with the calculated mean value  
-X[:, 3:6]= imputer.transform(X[:, 3:6])
+X[:, 3:9]= imputer.transform(X[:, 3:9])
 
 # Taking care of missing data
 #handling missing data (Replacing missing data with the mean value)  
